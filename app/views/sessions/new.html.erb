@@ -28,6 +28,17 @@
         </div>
         <%# PASSWORD %>
 
+        <%# SIGN UP LINK %>
+        <div class="mt-2 text-sm">
+          <span class="text-gray-600">
+            Or
+          </span>
+          <%= link_to new_user_path, class: "font-medium text-indigo-600 hover:text-indigo-500" do %>
+            register an account
+          <% end %>
+        </div>
+        <%# SIGN UP LINK %>
+
         <%# SIGN IN %>
         <div>
           <%= form.submit "Sign In", class: "flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 cursor-pointer" %>
