@@ -48,7 +48,7 @@ class UserTest < ActiveSupport::TestCase
   test "the correct format emails are valid" do
     valid_emails = ["abc@mail.com", "abc-d@mail.com", "abc.def@mail.com",
                     "abc_def@mail.com", "abc.def@mail.cc", "abc.def@mail-archive.com",
-                    "abc.def@mail.org", "abc.def@mail.com"]
+                    "abc.def@mail.org", "abc.def@mail.com", "user3@gmail.com"]
     
     valid_emails.each do |valid_email|
       @user.email = valid_email
