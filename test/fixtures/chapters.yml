@@ -3,7 +3,9 @@
 one:
   name: MyString
   content: MyText
+  volumes_id: 1
 
 two:
   name: MyString
   content: MyText
+  volumes_id: 2
