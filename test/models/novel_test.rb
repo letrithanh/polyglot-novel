@@ -15,4 +15,9 @@ class NovelTest < ActiveSupport::TestCase
     assert_not @novel.valid?
   end
 
+  test "a blank description is invalid" do
+    @novel.description = "     "
+    assert_not @novel.valid?
+  end
+
 end
