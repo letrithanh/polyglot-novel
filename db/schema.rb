@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_07_092532) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_09_041625) do
+  create_table "chapters", force: :cascade do |t|
+    t.string "name"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "volumes_id", null: false
+    t.index ["volumes_id"], name: "index_chapters_on_volumes_id"
+  end
+
+  create_table "novels", force: :cascade do |t|
+    t.string "name"
+    t.string "cover_url"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -19,4 +36,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_07_092532) do
     t.string "password_digest"
   end
 
+  create_table "volumes", force: :cascade do |t|
+    t.string "name"
+    t.string "cover_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "novels_id", null: false
+    t.index ["novels_id"], name: "index_volumes_on_novels_id"
+  end
+
+  add_foreign_key "chapters", "volumes", column: "volumes_id"
+  add_foreign_key "volumes", "novels", column: "novels_id"
 end
