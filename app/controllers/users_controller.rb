@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:current_user_id] = @user.id
+      log_in(@user)
       redirect_to root_path
     else
       flash[:create_user_errors] = []
