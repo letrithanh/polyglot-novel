@@ -2,10 +2,8 @@
 
 one:
   name: MyString
-  cover_url: MyString
   description: MyText
 
 two:
   name: MyString
-  cover_url: MyString
   description: MyText
