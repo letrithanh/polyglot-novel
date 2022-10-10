@@ -12,14 +12,13 @@
     </head>
 
 
-    <% if current_page?(new_user_path) || current_page?(login_path) %>
-        <body class="h-full bg-gray-50">
+    <body class="h-full bg-gray-100">
+        <% if current_page?(new_user_path) || current_page?(login_path) %>
             <%= yield %>
-    <% else %>
-        <body class="h-full bg-gray-100">
+        <% else %>
             <%= render "layouts/sidebar" %>
-    <% end %>
+        <% end %>
     
-            <% debug(params) %>
-        </body>
+        <% debug(params) %>
+    </body>
 </html>
