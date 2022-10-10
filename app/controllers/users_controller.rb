@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     else
       flash[:create_user_errors] = []
       @user.errors.full_messages.each { |msg| flash[:create_user_errors] << msg }  
-      redirect_to new_user_path # TODO: investigate why can't use render :new
+      redirect_to new_user_path # TODO: investigate why can't use render :new <- fix: turbo-data=false
     end
   end
 
