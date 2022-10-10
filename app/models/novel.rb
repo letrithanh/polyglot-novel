@@ -8,4 +8,6 @@ class Novel < ApplicationRecord
 
     has_one_attached :cover
 
+    validates :cover, presence: true
+
 end

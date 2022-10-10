@@ -1,6 +1,7 @@
 class NovelsController < ApplicationController
 
     def index
+        @novels = Novel.all
     end
 
     def new
@@ -9,8 +10,12 @@ class NovelsController < ApplicationController
 
     def create
         @novel = Novel.new(novel_params)
-        @novel.valid?
-        render :new
+        if @novel.valid?
+            @novel.save
+            redirect_to root_path
+        else
+            render :new
+        end
     end
 
     private

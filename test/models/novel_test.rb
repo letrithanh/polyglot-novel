@@ -20,4 +20,6 @@ class NovelTest < ActiveSupport::TestCase
     assert_not @novel.valid?
   end
 
+
+
 end
