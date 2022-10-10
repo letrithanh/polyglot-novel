@@ -11,10 +11,8 @@
     <% @novels.each do |novel| %>
     <li class="relative">
       <div class="group aspect-w-16 aspect-h-9 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-        <%= image_tag novel.cover, class: "object-center" if novel.cover.attached? %>
-        <button type="button" class="absolute inset-0 focus:outline-none">
-          <span class="sr-only">Novel cover image</span>
-        </button>
+        <%= image_tag novel.cover, class: "object-cover object-center" if novel.cover.attached? %>
+        <%= link_to "", novel_path(novel.id), class: "absolute inset-0 focus:outline-none cursor-point" %>
       </div>
       <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">
         <%= novel.name %>
