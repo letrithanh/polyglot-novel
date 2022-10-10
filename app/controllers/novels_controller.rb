@@ -8,6 +8,10 @@ class NovelsController < ApplicationController
         @novel = Novel.new if @novel.nil?
     end
 
+    def show
+        @novel = Novel.find_by(id: params[:id])
+    end
+
     def create
         @novel = Novel.new(novel_params)
         if @novel.valid?
